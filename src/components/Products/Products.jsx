@@ -1,0 +1,94 @@
+import React, { useEffect } from "react";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import { getProducts as getProductsAction } from "../../redux/actions/productsActions";
+import { showModal as showModalAction } from "../../redux/actions/modalActions";
+import modalTypes from "../../constants/modalTypes";
+import styles from "./Products.module.css";
+import loading from "../../loading.gif";
+
+const Products = ({
+    products,
+    isLoading,
+    error,
+    showModal,
+    getProducts
+}) => {
+    useEffect(() => {
+        getProducts();
+    }, [getProducts]);
+
+    if (isLoading) {
+        return <div align="center"><img src={loading} alt="Loading" />;</div>
+    }
+
+    if (error) {
+        return <div>Error</div>;
+    }
+
+    const showAddModal = () => {
+        showModal(modalTypes.ADD_PRODUCT);
+    };
+
+    const showDeleteModal = (productId) => {
+        showModal(modalTypes.DELETE_PRODUCT, {
+            id: productId
+        });
+    }
+
+    return (
+        <div>
+            <button /* onClick={() => showAddModal()} */>Add Product</button>
+            <table className={styles.styledTable}>
+                <thead>
+                    <tr>
+                        <th>Codigo</th>
+                        <th>Nombre</th>
+                        <th>Marca</th>
+                        <th>Precio</th>
+                        <th>Descripcion</th>
+                        <th>Stock</th>
+                        <th colspan="2" Align="center">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {products.map(product => {
+                        return (
+                            <tr key={product._id}>
+                                <td>{product.codigo}</td>
+                                <td>{product.nombre}</td>
+                                <td>{product.marca}</td>
+                                <td>{product.precio}</td>
+                                <td>{product.descripcion}</td>
+                                <td>{product.stock}</td>
+                                <td>
+                                    <button /* onClick={() => showDeleteModal(product._id)} */>Editar</button>
+                                </td>
+                                <td>
+                                    <button /* onClick={() => showDeleteModal(product._id)} */>Borrar</button>
+                                </td>
+                            </tr>
+                        );
+                    })}
+                </tbody>
+            </table>
+        </div>
+    )
+};
+
+const mapDispatchToProps = (dispatch) => {
+    return bindActionCreators({
+        showModal: showModalAction,
+        getProducts: getProductsAction,
+    }, dispatch);
+};
+
+const mapStateToProps = (state) => {
+    return {
+        isLoading: state.products.isLoading,
+        error: state.products.error,
+        products: state.products.list
+    };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Products);
