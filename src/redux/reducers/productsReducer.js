@@ -8,6 +8,9 @@ import {
     DELETE_PRODUCTS_FETCHING,
     DELETE_PRODUCTS_FULFILLED,
     DELETE_PRODUCTS_REJECTED,
+    UPDATE_PRODUCTS_FETCHING,
+    UPDATE_PRODUCTS_FULFILLED,
+    UPDATE_PRODUCTS_REJECTED,
 } from "../../constants/actionTypes";
 
 const initialState = {
@@ -68,6 +71,23 @@ const productReducer = (state = initialState, action) => {
                 ...state,
                 isLoading: false,
                 error: true
+            };
+        case UPDATE_PRODUCTS_FETCHING:
+            return {
+                ...state,
+                isLoading: true,
+            };
+        case UPDATE_PRODUCTS_FULFILLED:
+            return {
+                ...state,
+                isLoading: false,
+                list: [...state.list, action.payload],
+            };
+        case UPDATE_PRODUCTS_REJECTED:
+            return {
+                ...state,
+                isLoading: false,
+                error: true,
             };
         default:
             return state;

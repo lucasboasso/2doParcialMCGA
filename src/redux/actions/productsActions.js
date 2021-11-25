@@ -69,3 +69,57 @@ export const addProduct = (product) => (dispatch) => {
             dispatch(addProductsRejected())
         });
 };
+
+const deleteProductsFetching = () => ({
+    type: DELETE_PRODUCTS_FETCHING,
+});
+
+const deleteProductsFulfilled = (payload) => ({
+    type: DELETE_PRODUCTS_FULFILLED,
+    payload,
+});
+
+const deleteProductsRejected = () => ({
+    type: DELETE_PRODUCTS_REJECTED,
+});
+
+export const deleteProduct = (id) => (dispatch) => {
+    dispatch(deleteProductsFetching());
+    return fetch(`${URL}/${id}`, {method: 'DELETE'})
+        .then((data) => data.json())
+        .then(() => {
+            dispatch(deleteProductsFulfilled(id));
+        })
+        .catch(() => {
+            dispatch(deleteProductsRejected());
+        })
+}
+
+const updateProductsFetching = () => ({
+    type: UPDATE_PRODUCTS_FETCHING,
+});
+
+const updateProductsFulfilled = (payload) => ({
+    type: UPDATE_PRODUCTS_FULFILLED,
+    payload,
+});
+
+const updateProductsRejected = () => ({
+    type: UPDATE_PRODUCTS_REJECTED,
+});
+
+export const putProduct = (product) => (dispatch) => {
+    dispatch(updateProductsFetching());
+    return fetch(`${URL}/${product._id}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json'},
+        body: JSON.stringify(product)
+    })
+        .then((data) => data.json())
+        .then((response) => {
+            dispatch(updateProductsFulfilled(response));
+        })
+        .catch(() => {
+            dispatch(updateProductsRejected());
+        })
+}

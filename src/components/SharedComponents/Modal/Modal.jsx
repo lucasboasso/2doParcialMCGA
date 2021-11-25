@@ -12,3 +12,19 @@ const Modal = ({
 }) => {
 
 }
+
+const mapStateToProps = (state) => {
+    return {
+        show: state.modal.show,
+        modalType: state.modal.modalType,
+        meta: state.modal.meta
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return bindActionCreators({
+        closeModal: closeModalAction
+    }, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Modal);

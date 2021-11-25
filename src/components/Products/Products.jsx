@@ -36,6 +36,12 @@ const Products = ({
         });
     }
 
+    const showPutModal = (product) => {
+        showModal(modalTypes.UPDATE_PRODUCT, {
+            product
+        });
+    }
+
     return (
         <div>
             <button /* onClick={() => showAddModal()} */>Add Product</button>
@@ -62,7 +68,7 @@ const Products = ({
                                 <td>{product.descripcion}</td>
                                 <td>{product.stock}</td>
                                 <td>
-                                    <button /* onClick={() => showDeleteModal(product._id)} */>Editar</button>
+                                    <button /* onClick={() => showPutModal(product)} */>Editar</button>
                                 </td>
                                 <td>
                                     <button /* onClick={() => showDeleteModal(product._id)} */>Borrar</button>
