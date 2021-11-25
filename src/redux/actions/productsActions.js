@@ -54,3 +54,18 @@ const addProductsRejected = () => ({
     type: ADD_PRODUCTS_REJECTED,
 });
 
+export const addProduct = (product) => (dispatch) => {
+    dispatch(addProductsFetching());
+    return fetch(URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json'},
+        body: JSON.stringify(product)
+    })
+        .then((data) => data.json())
+        .then((response) => {
+            dispatch(addProductsFulfilled(response))
+        })
+        .catch(() => {
+            dispatch(addProductsRejected())
+        });
+};
