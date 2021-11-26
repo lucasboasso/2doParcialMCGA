@@ -5,11 +5,12 @@ import Navbar from "../Navbar/Navbar"
 import Header from "../Header/Header"
 import styles from "./MainLayout.module.css"
 
-const MainLayout = () => {
+const MainLayout = (props) => {
     return (
         <div>
             <Header />
-            <Footer />                        
+                <div>{props.childrens}</div>
+            <Footer />
         </div>
     );
 }
