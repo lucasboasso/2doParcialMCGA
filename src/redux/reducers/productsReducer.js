@@ -81,7 +81,13 @@ const productReducer = (state = initialState, action) => {
             return {
                 ...state,
                 isLoading: false,
-                list: [...state.list, action.payload],
+                list: [...state.list.map((product) => {
+                    if (product._id === action.payload._id){
+                        product= action.payload;
+                    }
+                    return product;
+                    })
+                ]
             };
         case UPDATE_PRODUCTS_REJECTED:
             return {
