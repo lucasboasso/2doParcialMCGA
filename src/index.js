@@ -9,6 +9,7 @@ import Routes from "./routes";
 import rootReducer from "./redux/reducers/rootReducer";
 import reportWebVitals from './reportWebVitals';
 
+
 const configureStore = () => {
   const enhancer = composeWithDevTools(
     applyMiddleware(thunk)

@@ -12,10 +12,9 @@ const EditProductForm = ({
     closeModal,
     product
 }) => {
-    const ProductForm = (props) => {
         const onUpdateProduct = (values) => {
-            props.putProduct({...values, id: product._id })
-            props.closeModal();
+            putProduct({...values, id: product._id })
+            closeModal();
         }
         return (
             <div>
@@ -46,7 +45,8 @@ const EditProductForm = ({
                 </Form>
             </div>
         )
-}
+    }
+
 
 const mapDispatchToProps = (dispatch) => {
     return bindActionCreators({

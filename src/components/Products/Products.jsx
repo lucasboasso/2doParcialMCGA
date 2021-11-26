@@ -6,6 +6,7 @@ import { showModal as showModalAction } from "../../redux/actions/modalActions";
 import modalTypes from "../../constants/modalTypes";
 import styles from "./Products.module.css";
 import loading from "../../loading.gif";
+import Button from 'react-bootstrap/Button'
 
 const Products = ({
     products,
@@ -44,7 +45,7 @@ const Products = ({
 
     return (
         <div>
-            <button onClick={() => showAddModal()} >Add Product</button>
+            <Button variant="success" onClick={() => showAddModal()} >Add Product</Button>
             <table className={styles.styledTable}>
                 <thead>
                     <tr>
@@ -68,10 +69,10 @@ const Products = ({
                                 <td>{product.descripcion}</td>
                                 <td>{product.stock}</td>
                                 <td>
-                                    <button onClick={() => showPutModal(product)}>Editar</button>
+                                    <Button variant="primary" onClick={() => showPutModal(product)}>Editar</Button>
                                 </td>
                                 <td>
-                                    <button onClick={() => showDeleteModal(product._id)}>Borrar</button>
+                                    <Button variant="danger" onClick={() => showDeleteModal(product._id)}>Borrar</Button>
                                 </td>
                             </tr>
                         );
