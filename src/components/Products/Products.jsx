@@ -19,11 +19,11 @@ const Products = ({
     }, [getProducts]);
 
     if (isLoading) {
-        return <div align="center"><img src={loading} alt="Loading" />;</div>
+        return <div align="center"><img src={loading} alt="Loading" /></div>
     }
 
     if (error) {
-        return <div>Error</div>;
+        return <div>Error</div>
     }
 
     const showAddModal = () => {
@@ -44,7 +44,7 @@ const Products = ({
 
     return (
         <div>
-            <button /* onClick={() => showAddModal()} */>Add Product</button>
+            <button onClick={() => showAddModal()} >Add Product</button>
             <table className={styles.styledTable}>
                 <thead>
                     <tr>
@@ -68,10 +68,10 @@ const Products = ({
                                 <td>{product.descripcion}</td>
                                 <td>{product.stock}</td>
                                 <td>
-                                    <button /* onClick={() => showPutModal(product)} */>Editar</button>
+                                    <button onClick={() => showPutModal(product)}>Editar</button>
                                 </td>
                                 <td>
-                                    <button /* onClick={() => showDeleteModal(product._id)} */>Borrar</button>
+                                    <button onClick={() => showDeleteModal(product._id)}>Borrar</button>
                                 </td>
                             </tr>
                         );
