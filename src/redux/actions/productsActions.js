@@ -110,7 +110,7 @@ const updateProductsRejected = () => ({
 
 export const putProduct = (product) => (dispatch) => {
     dispatch(updateProductsFetching());
-    return fetch(`${URL}/${product._id}`, {
+    return fetch(`${URL}/${product.id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json'},
         body: JSON.stringify(product)
