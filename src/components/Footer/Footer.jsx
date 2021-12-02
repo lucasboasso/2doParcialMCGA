@@ -1,10 +1,14 @@
-import React from 'react'
-import styles from './Footer.module.css'
+import React from "react";
+import style from "./Footer.module.css";
 
-const Footer = () => {
-    return (
-        <div styles={styles.footer}>Footer</div>
-    )
+function Footer() {
+  return (
+    <header>
+      <div className={style.footerStyle}>
+        2do Parcial MCGA
+      </div>
+    </header>
+  );
 }
 
 export default Footer;

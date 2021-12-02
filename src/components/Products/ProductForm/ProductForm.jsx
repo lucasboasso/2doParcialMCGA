@@ -5,15 +5,17 @@ import { addProduct as addProductAction } from "../../../redux/actions/productsA
 import { closeModal as closeModalAction } from "../../../redux/actions/modalActions";
 import { Form, Field } from "react-final-form"
 import { required } from "../../../utils/validations"
+import Button from "react-bootstrap/button"
+import styles from "./ProductForm.module.css"
 
-const ProductForm = (props) => {
+const ProductForm = ({addProduct, closeModal}) => {
     const onSubmitProduct = (values) => {
-        props.addProduct(values)
-        props.closeModal();
+        addProduct(values)
+        closeModal();
     }
 
     return (
-        <div>
+        <div className={styles.container}>
             <Form onSubmit={onSubmitProduct}>
                 {({handleSubmit, values, submitting, pristine }) => <form onSubmit={handleSubmit}>
                 <div>
@@ -34,7 +36,8 @@ const ProductForm = (props) => {
                 <div>
                     <Field name="stock" component="input" placeholder="Stock" label="Stock:" />
                 </div>
-                <button type="submit" disabled={submitting || pristine}>Cargar</button>
+                <Button variant="success" type="submit" disabled={submitting || pristine}>Cargar</Button>
+                <Button onClick={() => closeModal() }>Cancelar</Button>                
             </form>}
             </Form>
         </div>

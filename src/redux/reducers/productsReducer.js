@@ -47,7 +47,7 @@ const productReducer = (state = initialState, action) => {
             return {
                 ...state,
                 isLoading: false,
-                list: [...state.list, action.payload],
+                list: [...state.list, action.payload.saveProducto],
             };
         case ADD_PRODUCTS_REJECTED:
             return {
@@ -82,8 +82,8 @@ const productReducer = (state = initialState, action) => {
                 ...state,
                 isLoading: false,
                 list: [...state.list.map((product) => {
-                    if (product._id === action.payload._id){
-                        product= action.payload;
+                    if (product._id === action.payload.producto._id){
+                        product = action.payload.producto;
                     }
                     return product;
                     })

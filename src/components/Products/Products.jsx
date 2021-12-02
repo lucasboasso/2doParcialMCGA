@@ -45,9 +45,9 @@ const Products = ({
     }
 
     return (
-        <div>
+        <div className={styles.container}>
             <SharedModal />
-            <Button variant="success" onClick={() => showAddModal()} >Add Product</Button>
+            <Button variant="success" onClick={() => showAddModal()} >Agregar Producto</Button>
             <table className={styles.styledTable}>
                 <thead>
                     <tr>

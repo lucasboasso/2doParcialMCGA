@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { deleteProduct as deleteProductAction } from "../../../redux/actions/productsActions";
 import { closeModal as closeModalAction } from "../../../redux/actions/modalActions";
+import Button from "react-bootstrap/button";
 
 const DeleteProduct = ({
     closeModal,
@@ -18,8 +19,8 @@ const DeleteProduct = ({
         <div>
             ¿Estas seguro que deseas eliminar el producto?
             <div>
-                <button onClick={() => closeModal() }>Cancelar</button>
-                <button onClick={() => onDeleteProduct() }>ELIMINAR</button>
+                <Button onClick={() => closeModal() }>Cancelar</Button>
+                <Button variant="danger" onClick={() => onDeleteProduct() }>ELIMINAR</Button>
             </div>
         </div>
     )

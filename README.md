@@ -69,3 +69,7 @@ Se trabaja con una API creada en el primer parcial con una coleccion de producto
 > - npm install
 > - npm start
 > - Direccion local: http://localhost:3000
+
+## App desplegada en Heroku App
+
+- Direccion: https://segundoparcialmcga.herokuapp.com/
