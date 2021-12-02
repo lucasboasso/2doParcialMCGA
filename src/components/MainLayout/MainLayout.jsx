@@ -9,7 +9,7 @@ const MainLayout = (props) => {
     return (
         <div>
             <Header />
-                <div>{props.childrens}</div>
+                <div>{props.children}</div>
             <Footer />
         </div>
     );

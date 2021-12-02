@@ -7,6 +7,7 @@ import modalTypes from "../../constants/modalTypes";
 import styles from "./Products.module.css";
 import loading from "../../loading.gif";
 import Button from 'react-bootstrap/Button'
+import SharedModal from "../SharedComponents/Modal/Modal"
 
 const Products = ({
     products,
@@ -45,6 +46,7 @@ const Products = ({
 
     return (
         <div>
+            <SharedModal />
             <Button variant="success" onClick={() => showAddModal()} >Add Product</Button>
             <table className={styles.styledTable}>
                 <thead>
@@ -55,7 +57,7 @@ const Products = ({
                         <th>Precio</th>
                         <th>Descripcion</th>
                         <th>Stock</th>
-                        <th colspan="2" Align="center">Acciones</th>
+                        <th colSpan="2" text-align="center">Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -92,6 +94,7 @@ const mapDispatchToProps = (dispatch) => {
 
 const mapStateToProps = (state) => {
     return {
+        showModalValue: state.modal.show,
         isLoading: state.products.isLoading,
         error: state.products.error,
         products: state.products.list

@@ -9,12 +9,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Routes = () => {
   return (
-    //<MainLayout>      
-      <Switch>        
+    <MainLayout>
+      <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/productos" component={Products} />
       </Switch>
-    //</MainLayout>
+    </MainLayout>
   )
 };
 

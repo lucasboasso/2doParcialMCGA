@@ -16,22 +16,22 @@ const ProductForm = (props) => {
         <div>
             <Form onSubmit={onSubmitProduct}>
                 {({handleSubmit, values, submitting, pristine }) => <form onSubmit={handleSubmit}>
-                <div>                    
+                <div>
                     <Field name="codigo" component="input" placeholder="Codigo" label="Codigo:" validate={required} />
                 </div>
                 <div>
                     <Field name="nombre" component="input" placeholder="Nombre del producto" label="Nombre:" />
                 </div>
-                <div>                    
+                <div>
                     <Field name="marca" component="input" placeholder="Marca del producto" label="Marca:" />
                 </div>
-                <div>                    
+                <div>
                     <Field name="precio" component="input" placeholder="Precio" label="Precio:" />
                 </div>
                 <div>
                     <Field name="descripcion" component="input" placeholder="Descripcion" label="Descripcion:" />
                 </div>
-                <div>                    
+                <div>
                     <Field name="stock" component="input" placeholder="Stock" label="Stock:" />
                 </div>
                 <button type="submit" disabled={submitting || pristine}>Cargar</button>

@@ -9,7 +9,7 @@ import ProductForm from "../../../components/Products/ProductForm/ProductForm"
 import DeleteProduct from "../../../components/Products/DeleteProduct/DeleteProduct"
 import EditProductForm from "../../../components/Products/EditProductForm/EditProductForm"
 
-const Modal = ({
+const SharedModal = ({
     show,
     modalType,
     meta,
@@ -26,6 +26,7 @@ const Modal = ({
             break;
         case modalTypes.UPDATE_PRODUCT:
             modalComponent = <EditProductForm product={meta.product} />
+            break;
         default:
             modalComponent = null;
             break;
@@ -38,7 +39,7 @@ const Modal = ({
                     {modalComponent}
                 </div>
             </Modal.Body>
-        </Modal>        
+        </Modal>
     )
 
 }
@@ -57,4 +58,4 @@ const mapDispatchToProps = (dispatch) => {
     }, dispatch);
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Modal);
+export default connect(mapStateToProps, mapDispatchToProps)(SharedModal);
