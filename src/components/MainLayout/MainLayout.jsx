@@ -5,7 +5,7 @@ import styles from "./MainLayout.module.css"
 
 const MainLayout = (props) => {
     return (
-        <div>
+        <div className={styles.container}>
             <Header />
                 <div className={styles.layout}>{props.children}</div>
             <Footer />

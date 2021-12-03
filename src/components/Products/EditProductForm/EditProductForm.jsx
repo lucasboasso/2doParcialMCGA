@@ -19,7 +19,7 @@ const EditProductForm = ({
             closeModal();
         }
         return (
-            <div className={styles.wrapper}>                
+            <div className={styles.wrapper}>
                 <Form
                     onSubmit={onUpdateProduct}
                     initialValues={{codigo: product.codigo, nombre: product.nombre, marca: product.marca,
@@ -51,8 +51,10 @@ const EditProductForm = ({
                             <label>Stock: </label>
                             <Field name="stock" component="input" placeholder="Stock" label="Stock:" />
                         </div>
-                        <Button variant="primary" type="submit" disabled={submitting || pristine}>Editar</Button>
+                        <div className={styles.buttonsContainer}>
+                        <Button variant="success" type="submit" disabled={submitting || pristine}>Editar</Button>
                         <Button onClick={() => closeModal() }>Cancelar</Button>
+                        </div>
                     </form>
                 )}
             />

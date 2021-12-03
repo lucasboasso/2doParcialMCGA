@@ -19,25 +19,31 @@ const ProductForm = ({addProduct, closeModal}) => {
             <Form onSubmit={onSubmitProduct}>
                 {({handleSubmit, values, submitting, pristine }) => <form onSubmit={handleSubmit}>
                 <div>
+                    <label>Codigo:</label>
                     <Field name="codigo" component="input" placeholder="Codigo" label="Codigo:" validate={required} />
                 </div>
                 <div>
+                    <label>Nombre:</label>
                     <Field name="nombre" component="input" placeholder="Nombre del producto" label="Nombre:" />
                 </div>
                 <div>
+                    <label>Marca:</label>
                     <Field name="marca" component="input" placeholder="Marca del producto" label="Marca:" />
                 </div>
                 <div>
+                    <label>Precio:</label>
                     <Field name="precio" component="input" placeholder="Precio" label="Precio:" />
                 </div>
                 <div>
-                    <Field name="descripcion" component="input" placeholder="Descripcion" label="Descripcion:" />
+                    <label>Descripcion:</label>
+                    <Field name="descripcion" component="textarea" placeholder="Descripcion" label="Descripcion:" />
                 </div>
                 <div>
+                    <label>Stock:</label>
                     <Field name="stock" component="input" placeholder="Stock" label="Stock:" />
                 </div>
                 <Button variant="success" type="submit" disabled={submitting || pristine}>Cargar</Button>
-                <Button onClick={() => closeModal() }>Cancelar</Button>                
+                <Button variant="primary" onClick={() => closeModal() }>Cancelar</Button>
             </form>}
             </Form>
         </div>

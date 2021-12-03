@@ -3,6 +3,8 @@
   }
 
 .title {
+    display: flex;
+    justify-content: center;
     text-align: center;
     font-size: 24px;
     font-weight: bold;
@@ -31,4 +33,21 @@ label {
     width: 110px;
     font-size: 1em;
     line-height: 32px;
+    text-align: right;
+    margin-right: 10px;
+}
+
+input textarea {
+    width: 100%;
+    margin: 10px 0;
+    padding: 12px 20px;
+}
+
+textarea {
+    resize: none;
+}
+
+.buttonsContainer {
+    display: flex;
+    justify-content: space-between;
 }

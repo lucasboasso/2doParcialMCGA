@@ -1,10 +1,19 @@
-.footerStyle {
+/* .footerStyle {
     width: 100%;
     background: #009879;
     color: rgb(239, 232, 216);
     text-align: center;
     font-size: 20px;
     padding: auto;
-    margin-top: 30px;
+    margin-top: auto;
     bottom: 0px;
-  }
+  } */
+
+.footerStyle {
+  width: 100%;
+  background: #009879;
+  color: rgb(239, 232, 216);
+  text-align: center;
+  font-size: 20px;
+  bottom: 0px;
+}
