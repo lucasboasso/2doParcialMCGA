@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { deleteProduct as deleteProductAction } from "../../../redux/actions/productsActions";
 import { closeModal as closeModalAction } from "../../../redux/actions/modalActions";
-import Button from "react-bootstrap/button";
+import Button from "react-bootstrap/Button";
 
 const DeleteProduct = ({
     closeModal,

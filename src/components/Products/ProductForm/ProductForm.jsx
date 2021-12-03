@@ -5,7 +5,7 @@ import { addProduct as addProductAction } from "../../../redux/actions/productsA
 import { closeModal as closeModalAction } from "../../../redux/actions/modalActions";
 import { Form, Field } from "react-final-form"
 import { required } from "../../../utils/validations"
-import Button from "react-bootstrap/button"
+import Button from "react-bootstrap/Button"
 import styles from "./ProductForm.module.css"
 
 const ProductForm = ({addProduct, closeModal}) => {
