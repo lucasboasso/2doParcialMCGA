@@ -6,8 +6,8 @@ import { showModal as showModalAction } from "../../redux/actions/modalActions";
 import modalTypes from "../../constants/modalTypes";
 import styles from "./Products.module.css";
 import loading from "../../loading.gif";
-import Button from "react-bootstrap/button"
-import SharedModal from "../SharedComponents/Modal/Modal"
+import Button from 'react-bootstrap/Button';
+import SharedModal from "../SharedComponents/Modal/Modal";
 
 const Products = ({
     products,
