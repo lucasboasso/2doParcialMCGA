@@ -1,3 +1,9 @@
 .container{
-    width: 100%;
+    width: 70%;
+    font-size: 24px;    
+    font-family: sans-serif;    
+    margin: 10px;
+    color: #354649;
+    align-self: center;
+
 }

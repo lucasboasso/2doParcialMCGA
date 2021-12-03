@@ -3,9 +3,9 @@ import styles from "./Home.module.css";
 
 const Home = () => {
     return (
-        <div className={styles.home}>
+        <div className={styles.container}>
             <h1>Home Page</h1>
-            <p>2do Parcial de Metodologias Computacionales de Gestion Administrativas</p>
+            <p>2do Parcial de Modelos Computacionales de Gestion Administrativa</p>
             <h2>
                 Alumno
             </h2>

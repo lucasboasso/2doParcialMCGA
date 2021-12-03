@@ -52,8 +52,8 @@ const EditProductForm = ({
                             <Field name="stock" component="input" placeholder="Stock" label="Stock:" />
                         </div>
                         <div className={styles.buttonsContainer}>
-                        <Button variant="success" type="submit" disabled={submitting || pristine}>Editar</Button>
                         <Button onClick={() => closeModal() }>Cancelar</Button>
+                        <Button variant="success" type="submit" disabled={submitting || pristine}>Editar</Button>
                         </div>
                     </form>
                 )}

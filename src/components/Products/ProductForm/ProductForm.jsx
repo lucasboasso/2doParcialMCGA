@@ -17,7 +17,9 @@ const ProductForm = ({addProduct, closeModal}) => {
     return (
         <div className={styles.container}>
             <Form onSubmit={onSubmitProduct}>
-                {({handleSubmit, values, submitting, pristine }) => <form onSubmit={handleSubmit}>
+                {({handleSubmit, values, submitting, pristine }) => 
+                <form onSubmit={handleSubmit} className={styles.form}>
+                <div className={styles.title}>Agregar Producto</div>
                 <div>
                     <label>Codigo:</label>
                     <Field name="codigo" component="input" placeholder="Codigo" label="Codigo:" validate={required} />
@@ -42,8 +44,10 @@ const ProductForm = ({addProduct, closeModal}) => {
                     <label>Stock:</label>
                     <Field name="stock" component="input" placeholder="Stock" label="Stock:" />
                 </div>
-                <Button variant="success" type="submit" disabled={submitting || pristine}>Cargar</Button>
+                <div className={styles.buttonsContainer}>                
                 <Button variant="primary" onClick={() => closeModal() }>Cancelar</Button>
+                <Button variant="success" type="submit" disabled={submitting || pristine}>Cargar</Button>
+                </div>
             </form>}
             </Form>
         </div>

@@ -20,7 +20,7 @@
     border-radius: 3px;
 }
 
-form div{
+.form div{
     text-align:center;
     display: flex;
     flex-flow: row nowrap;
@@ -28,7 +28,7 @@ form div{
     margin: 5px;
 }
 
-label {
+.form label {
     color: #333;
     width: 110px;
     font-size: 1em;
@@ -37,13 +37,13 @@ label {
     margin-right: 10px;
 }
 
-input textarea {
+.form input textarea {
     width: 100%;
     margin: 10px 0;
     padding: 12px 20px;
 }
 
-textarea {
+.form textarea {
     resize: none;
 }
 

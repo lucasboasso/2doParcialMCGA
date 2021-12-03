@@ -4,6 +4,7 @@ import { bindActionCreators } from "redux";
 import { deleteProduct as deleteProductAction } from "../../../redux/actions/productsActions";
 import { closeModal as closeModalAction } from "../../../redux/actions/modalActions";
 import Button from "react-bootstrap/Button";
+import styles from "./DeleteProduct.module.css"
 
 const DeleteProduct = ({
     closeModal,
@@ -16,9 +17,9 @@ const DeleteProduct = ({
     }
 
     return (
-        <div>
+        <div className={styles.container}>
             ¿Estas seguro que deseas eliminar el producto?
-            <div>
+            <div className={styles.buttonsContainer}>
                 <Button onClick={() => closeModal() }>Cancelar</Button>
                 <Button variant="danger" onClick={() => onDeleteProduct() }>ELIMINAR</Button>
             </div>
