@@ -4,7 +4,7 @@ Este es el segundo parcial de la materia MCGA de la Facultad de Sistemas de la U
 
 Alumno: **Lucas Boasso**
 
-## Consignas  
+## Consignas
 
 # Desarrollar una aplicación web que cumpla con los siguientes requisitos:
 - Debe estar desarrollada con React utilizando el CLI de create-react-app.
@@ -70,6 +70,10 @@ Se trabaja con una API creada en el primer parcial con una coleccion de producto
 > - npm start
 > - Direccion local: http://localhost:3000
 
-## App desplegada en Heroku App
+## App desplegada en Vercel
 
-- Direccion: https://segundoparcialmcga.herokuapp.com/
+- Direccion: https://segundoparcialmcga-axi3wjpim-lucasboassos-projects.vercel.app/
+
+## API utilizada
+
+- https://primerparcialmcga-k488iyp05-lucasboassos-projects.vercel.app/api/productos
