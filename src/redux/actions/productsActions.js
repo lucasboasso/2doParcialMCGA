@@ -13,8 +13,8 @@ import {
     UPDATE_PRODUCTS_REJECTED,
 } from "../../constants/actionTypes";
 
-//const URL = "http://localhost:3030/api/productos"
-const URL = "https://primerparcialmcga-k488iyp05-lucasboassos-projects.vercel.app/api/productos"
+const URL = "http://localhost:3030/api/productos"
+//const URL = "https://primerparcialmcga.herokuapp.com/api/productos"
 
 const getProductsFetching = () => ({
     type: GET_PRODUCTS_FETCHING,
