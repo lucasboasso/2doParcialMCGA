@@ -11,6 +11,7 @@ import {
     UPDATE_PRODUCTS_FETCHING,
     UPDATE_PRODUCTS_FULFILLED,
     UPDATE_PRODUCTS_REJECTED,
+    GET_PRODUCTS_TOKEN,
 } from "../../constants/actionTypes";
 
 const initialState = {
@@ -33,6 +34,12 @@ const productReducer = (state = initialState, action) => {
                 list: action.payload
             };
         case GET_PRODUCTS_REJECTED:
+            return {
+                ...state,
+                isLoading: false,
+                error: true
+            };
+            case GET_PRODUCTS_TOKEN:
             return {
                 ...state,
                 isLoading: false,

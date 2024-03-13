@@ -5,7 +5,7 @@ function Footer() {
   return (
     <header>
       <div className={style.footerContainer}>
-        2do Parcial MCGA
+        Examen Final MCGA
       </div>
     </header>
   );

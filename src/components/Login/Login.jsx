@@ -45,7 +45,7 @@ export default function Login() {
     }
   }
   if (auth.isAuthenticated) {
-    return <Redirect to="/dashboard" />;
+    return <Redirect to="/" />;
   }
   return (
       <form onSubmit={handleSubmit} className="form">

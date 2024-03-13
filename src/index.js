@@ -8,7 +8,7 @@ import thunk from "redux-thunk";
 import Routes from "./routes";
 import rootReducer from "./redux/reducers/rootReducer";
 import reportWebVitals from './reportWebVitals';
-
+import { AuthProvider } from "./components/Auth/AuthProvider";
 
 const configureStore = () => {
   const enhancer = composeWithDevTools(
@@ -22,9 +22,11 @@ const store = configureStore();
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <Router>
-        <Routes />
-      </Router>
+      <AuthProvider>
+        <Router>
+          <Routes />
+        </Router>
+      </AuthProvider>
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')

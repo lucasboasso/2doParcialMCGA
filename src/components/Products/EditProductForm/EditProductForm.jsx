@@ -7,6 +7,7 @@ import { Form, Field } from "react-final-form"
 import { required } from "../../../utils/validations"
 import Button from "react-bootstrap/Button"
 import styles from "./EditProductForm.module.css"
+import { useAuth } from "../../Auth/AuthProvider";
 
 
 const EditProductForm = ({
@@ -14,8 +15,10 @@ const EditProductForm = ({
     closeModal,
     product
 }) => {
+        const { getAccessToken } = useAuth();
         const onUpdateProduct = (values) => {
-            putProduct({...values, id: product._id })
+            const token = getAccessToken();
+            putProduct({...values, id: product._id }, token)
             closeModal();
         }
         return (

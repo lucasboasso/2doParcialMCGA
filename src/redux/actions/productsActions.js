@@ -29,9 +29,13 @@ const getProductsRejected = () => ({
     type: GET_PRODUCTS_REJECTED,
 });
 
-export const getProducts = () => (dispatch) => {
+export const getProducts = (token) => (dispatch) => {
     dispatch(getProductsFetching());
-    return fetch(URL)
+    return fetch(URL, {
+        headers: {
+            Authorization: `Bearer ${token}`
+        },
+    })
         .then((data) => data.json())
         .then((response) => {
             dispatch(getProductsFulfilled(response));
@@ -54,11 +58,14 @@ const addProductsRejected = () => ({
     type: ADD_PRODUCTS_REJECTED,
 });
 
-export const addProduct = (product) => (dispatch) => {
+export const addProduct = (product, token) => (dispatch) => {
     dispatch(addProductsFetching());
     return fetch(URL, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json'},
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+        },
         body: JSON.stringify(product)
     })
         .then((data) => data.json())
@@ -83,9 +90,14 @@ const deleteProductsRejected = () => ({
     type: DELETE_PRODUCTS_REJECTED,
 });
 
-export const deleteProduct = (id) => (dispatch) => {
+export const deleteProduct = (id, token) => (dispatch) => {
     dispatch(deleteProductsFetching());
-    return fetch(`${URL}/${id}`, {method: 'DELETE'})
+    return fetch(`${URL}/${id}`, {
+        method: 'DELETE',
+        headers: {
+            'Authorization': `Bearer ${token}`
+        }
+    })
         .then((data) => data.json())
         .then(() => {
             dispatch(deleteProductsFulfilled(id));
@@ -108,11 +120,14 @@ const updateProductsRejected = () => ({
     type: UPDATE_PRODUCTS_REJECTED,
 });
 
-export const putProduct = (product) => (dispatch) => {
+export const putProduct = (product, token) => (dispatch) => {
     dispatch(updateProductsFetching());
     return fetch(`${URL}/${product.id}`, {
         method: 'PUT',
-        headers: { 'Content-Type': 'application/json'},
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+        },
         body: JSON.stringify(product)
     })
         .then((data) => data.json())

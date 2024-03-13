@@ -10,14 +10,14 @@ import Signup from "./components/Signup/Signup";
 
 const Routes = () => {
   return (
-    <MainLayout>
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route path="/productos" component={Products} />
-        <Route path="/login" component={Login} />
-        <Route path="/signup" component={Signup} />
-      </Switch>
-    </MainLayout>
+      <MainLayout>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/productos" component={Products} />
+          <Route path="/login" component={Login} />
+          <Route path="/signup" component={Signup} />
+        </Switch>
+      </MainLayout>
   )
 };
 

@@ -5,14 +5,17 @@ import { deleteProduct as deleteProductAction } from "../../../redux/actions/pro
 import { closeModal as closeModalAction } from "../../../redux/actions/modalActions";
 import Button from "react-bootstrap/Button";
 import styles from "./DeleteProduct.module.css"
+import { useAuth } from "../../Auth/AuthProvider";
 
 const DeleteProduct = ({
     closeModal,
     deleteProduct,
     productId
 }) => {
+    const { getAccessToken } = useAuth();
     const onDeleteProduct = () => {
-        deleteProduct(productId);
+        const token = getAccessToken();
+        deleteProduct(productId, token);
         closeModal();
     }
 

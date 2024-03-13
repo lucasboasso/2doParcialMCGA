@@ -5,7 +5,7 @@ const Home = () => {
     return (
         <div className={styles.container}>
             <h1>Home Page</h1>
-            <p>2do Parcial de Modelos Computacionales de Gestion Administrativa</p>
+            <p>Examen Final Modelos Computacionales de Gestion Administrativa</p>
             <h2>
                 Alumno
             </h2>

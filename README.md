@@ -1,6 +1,6 @@
 # Modelos Computacionales de Gestión Administrativa
 
-Este es el segundo parcial de la materia MCGA de la Facultad de Sistemas de la UAI
+Este es el examenfinal de la materia MCGA de la Facultad de Sistemas de la UAI
 
 Alumno: **Lucas Boasso**
 
@@ -70,10 +70,7 @@ Se trabaja con una API creada en el primer parcial con una coleccion de producto
 > - npm start
 > - Direccion local: http://localhost:3000
 
-## App desplegada en Vercel
-
-- Direccion: https://segundoparcialmcga-axi3wjpim-lucasboassos-projects.vercel.app/
-
 ## API utilizada
 
-- https://primerparcialmcga-k488iyp05-lucasboassos-projects.vercel.app/api/productos
+- Se utiliza como api el backend desarrollado en la materia: https://github.com/lucasboasso/1erParcialMCGA
+- http://localhost:3030/

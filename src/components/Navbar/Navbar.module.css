@@ -6,7 +6,7 @@
     list-style-type: none;
     margin: 0;
     padding: 0;
-    overflow: hidden;    
+    overflow: hidden;
     background-color: #A3C6C4;
     font-size: 20px;
     font-weight: bold;
@@ -17,7 +17,7 @@
 }
 
 .navbar li a {
-    display: block;    
+    display: block;
     color: #354649;
     text-align: center;
     padding: 14px 16px;

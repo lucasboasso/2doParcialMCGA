@@ -7,17 +7,20 @@ import { Form, Field } from "react-final-form"
 import { required } from "../../../utils/validations"
 import Button from "react-bootstrap/Button"
 import styles from "./ProductForm.module.css"
+import { useAuth } from "../../Auth/AuthProvider";
 
 const ProductForm = ({addProduct, closeModal}) => {
+    const { getAccessToken } = useAuth();
     const onSubmitProduct = (values) => {
-        addProduct(values)
+        const token = getAccessToken();
+        addProduct(values, token)
         closeModal();
     }
 
     return (
         <div className={styles.container}>
             <Form onSubmit={onSubmitProduct}>
-                {({handleSubmit, values, submitting, pristine }) => 
+                {({handleSubmit, values, submitting, pristine }) =>
                 <form onSubmit={handleSubmit} className={styles.form}>
                 <div className={styles.title}>Agregar Producto</div>
                 <div>
@@ -44,7 +47,7 @@ const ProductForm = ({addProduct, closeModal}) => {
                     <label>Stock:</label>
                     <Field name="stock" component="input" placeholder="Stock" label="Stock:" />
                 </div>
-                <div className={styles.buttonsContainer}>                
+                <div className={styles.buttonsContainer}>
                 <Button variant="primary" onClick={() => closeModal() }>Cancelar</Button>
                 <Button variant="success" type="submit" disabled={submitting || pristine}>Cargar</Button>
                 </div>
